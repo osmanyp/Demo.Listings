@@ -1,7 +1,7 @@
 
 namespace Demo.Listings.Infrastructure.DataAccess.EF.Entities
 {
-    internal class Listing
+    public class Listing
     {
         public int Id { get; set; }
         public decimal Price { get; set; }

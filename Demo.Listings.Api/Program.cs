@@ -1,3 +1,5 @@
+using Demo.Listings.Infrastructure.DataAccess;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -27,4 +29,20 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// var db = app.Services.GetService<ListingsDbContext>();
+// if (db.Database.EnsureCreated()) {
+//     Demo.Listings.Infrastructure.SeedData.SeedDataToDb(db);
+// }
+
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+using (var scope = scopeFactory.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ListingsDbContext>();
+    if (db.Database.EnsureCreated()) {
+        Demo.Listings.Infrastructure.SeedData.SeedDataToDb(db);
+    }
+}
+
 app.Run();
+
+

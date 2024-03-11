@@ -1,15 +1,15 @@
 
+using Demo.Listings.Infrastructure.DataAccess;
 using Demo.Listings.Infrastructure.DataAccess.EF.Entities;
 
 namespace Demo.Listings.Infrastructure
 {
-    internal static class SeedData
+    public static class SeedData
     {
-        public static Listing[] GetSeedData()
+        public static void SeedDataToDb(ListingsDbContext context)
         {
-            return
-            [
-                new Listing {
+            context.Listings.AddRange(new List<Listing>{
+new Listing {
                 Id = 1,
                 Address = "04235 Hancock Glens, South Brettmouth, CT 68377",
                 Bathrooms = 4,
@@ -105,7 +105,9 @@ namespace Demo.Listings.Infrastructure
                 Price = 350412,
                 YearBuilt = 1942
             }
-            ];
+            });
+
+            context.SaveChanges();
         }
     }
 }
