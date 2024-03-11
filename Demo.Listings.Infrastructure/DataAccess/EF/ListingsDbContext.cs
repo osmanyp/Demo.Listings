@@ -11,8 +11,12 @@ namespace Demo.Listings.Infrastructure.DataAccess
 
         public ListingsDbContext()
         {
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
+            var path = Environment.GetEnvironmentVariable("LOCALAPPDATA");
+            if(path is null)
+            {
+                var folder = Environment.SpecialFolder.LocalApplicationData;
+                path = Environment.GetFolderPath(folder);
+            }
             DbPath = System.IO.Path.Join(path, "listings.db");
         }
 
