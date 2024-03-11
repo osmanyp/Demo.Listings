@@ -1,4 +1,6 @@
-using Demo.Listing.Api.Dtos;
+using AutoMapper;
+using Demo.Listings.Api.Dtos;
+using Demo.Listings.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Demo.Listings.Api.Controllers
@@ -7,17 +9,52 @@ namespace Demo.Listings.Api.Controllers
     [Route("[controller]")]
     public class ListingsController : ControllerBase
     {
-        private readonly ILogger<ListingsController> _logger;
+        private readonly IMapper mapper;
+        private readonly ILogger<ListingsController> logger;
+        private readonly ListingsService listingsService;
 
-        public ListingsController(ILogger<ListingsController> logger)
+        public ListingsController(ListingsService listingsService,
+            IMapper mapper,
+            ILogger<ListingsController> logger)
         {
-            _logger = logger;
+            this.mapper = mapper;
+            this.logger = logger;
+            this.listingsService = listingsService;
+        }
+
+        [HttpGet]
+        [Route("/listings/{id}")]
+        public async Task<IActionResult> Get([FromRoute] int id)
+        {
+            var result = await listingsService.listingsRepository.GetAsync(id);
+            if (result is null)
+            {
+                return NotFound();
+            }
+            return Ok(result);
+        }
+
+        [HttpGet()]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = await listingsService.listingsRepository.GetAllAsync();
+            return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult Add([FromBody] ListingReq listingReq)
+        public async Task<IActionResult> Add([FromBody] CreateListingReq listingReq)
         {
-            return Ok();
+            var model = mapper.Map<Domain.Models.Listing>(listingReq);
+            await listingsService.SaveAsync(model);
+            return Created();
+        }
+
+        [HttpDelete]
+        [Route("/listings/{id}")]
+        public async Task<IActionResult> Delete([FromRoute] int id)
+        {
+            await listingsService.Delete(id);
+            return NoContent();
         }
     }
 

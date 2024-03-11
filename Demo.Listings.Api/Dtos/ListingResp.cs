@@ -1,4 +1,4 @@
-namespace Demo.Listing.Api.Dtos;
+namespace Demo.Listings.Api.Dtos;
 
 public class ListingResp : Listing
 {

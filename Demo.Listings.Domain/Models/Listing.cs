@@ -1,9 +1,8 @@
-
-namespace Demo.Listings.Infrastructure.DataAccess.EF.Entities
+namespace Demo.Listings.Domain.Models
 {
-    internal class Listing
+    public class Listing 
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public decimal Price { get; set; }
         public int Bathrooms { get; set; }
         public int HalfBathrooms { get; set; }
@@ -13,11 +12,5 @@ namespace Demo.Listings.Infrastructure.DataAccess.EF.Entities
         public string? PhotoUrl { get; set; }
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
-
-        /*[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public DateTime Created { get; set; }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime LastUpdate { get; set; }*/
     }
 }

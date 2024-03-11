@@ -7,6 +7,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+
+builder.Services.AddAutoMapper(typeof(Demo.Listings.Api.Mappers.MapperConfig), typeof(Demo.Listings.Infrastructure.Mappers.MapperConfig));
+builder.Services.AddCustomServices();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
