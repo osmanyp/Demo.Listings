@@ -17,7 +17,7 @@ new Listing {
                 HalfBathrooms = 1,
                 Latitude = -40.071434,
                 Longitude = 5.701202,
-                PhotoUrl = "https://example.com/photo1",
+                PhotoUrl = "https://photos.zillowstatic.com/fp/a8c3f89fd7ce5c438aef98c691a64206-p_e.jpg",
                 Price = 565231,
                 YearBuilt = 2004
             },
@@ -29,7 +29,7 @@ new Listing {
                 HalfBathrooms = 2,
                 Latitude = 88.519002,
                 Longitude = 44.788677,
-                PhotoUrl = "https://example.com/photo2",
+                PhotoUrl = "https://photos.zillowstatic.com/fp/a8c3f89fd7ce5c438aef98c691a64206-p_e.jpg",
                 Price = 127932,
                 YearBuilt = 1907
             },
@@ -65,7 +65,7 @@ new Listing {
                 HalfBathrooms = 1,
                 Latitude = -19.518991,
                 Longitude = -8.773917,
-                PhotoUrl = "https://example.com/photo5",
+                PhotoUrl = "https://photos.zillowstatic.com/fp/a8c3f89fd7ce5c438aef98c691a64206-p_e.jpg",
                 Price = 971216,
                 YearBuilt = 1917
             },
@@ -77,7 +77,7 @@ new Listing {
                 HalfBathrooms = 3,
                 Latitude = -30.447463,
                 Longitude = 17.217975,
-                PhotoUrl = "https://example.com/photo6",
+                PhotoUrl = "https://photos.zillowstatic.com/fp/a8c3f89fd7ce5c438aef98c691a64206-p_e.jpg",
                 Price = 697592,
                 YearBuilt = 1997
             },
@@ -89,7 +89,7 @@ new Listing {
                 HalfBathrooms = 0,
                 Latitude = -16.127953,
                 Longitude = -154.467688,
-                PhotoUrl = "https://example.com/photo7",
+                PhotoUrl = "https://photos.zillowstatic.com/fp/a8c3f89fd7ce5c438aef98c691a64206-p_e.jpg",
                 Price = 434863,
                 YearBuilt = 2003
             },
@@ -101,7 +101,7 @@ new Listing {
                 HalfBathrooms = 2,
                 Latitude = -24.571092,
                 Longitude = 48.948146,
-                PhotoUrl = "https://example.com/photo20",
+                PhotoUrl = "https://photos.zillowstatic.com/fp/a8c3f89fd7ce5c438aef98c691a64206-p_e.jpg",
                 Price = 350412,
                 YearBuilt = 1942
             }

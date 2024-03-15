@@ -19,7 +19,7 @@ namespace Demo.Listings.Infrastructure.DataAccess.EF
         public async Task<IEnumerable<Listing>> GetAllAsync()
         {
             var result = await listingsDbContext.Listings.ToListAsync();
-            return mapper.Map<IEnumerable<Listing>>(result);
+            return mapper.Map<IEnumerable<Listing>>(result).Reverse();
         }
 
         public async Task SaveAsync(Listing listing)
